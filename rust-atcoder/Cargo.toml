@@ -1,0 +1,9 @@
+[package]
+name = "rust-atcoder"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+num = "0.4.3"
+proconio = "0.4.5"
+rand = "0.8.5"
