@@ -1,10 +1,7 @@
 use std::process;
 
-use config::ArgOption;
-use config::Config;
-use todo::Todo;
-
-use crate::todo::help;
+use config::{ArgOption, Config};
+use todo::{help, Todo};
 
 mod config;
 mod todo;
@@ -23,7 +20,6 @@ fn main() {
     let todo: Todo = match Todo::new() {
         Ok(res) => res,
         Err(e) => {
-            help();
             eprintln!("{:?}", e);
             process::exit(1);
         }

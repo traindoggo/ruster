@@ -32,7 +32,6 @@ pub struct Config {
 
 impl Config {
     pub fn new(args: Vec<String>) -> Result<Config, &'static str> {
-        // no args does show all todo
         let (option, args) = if args.len() == 1 {
             (ArgOption::Show, vec![])
         } else {
