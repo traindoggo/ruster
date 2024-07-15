@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub struct Todo {
     pub id: i32,
     pub task: String,
