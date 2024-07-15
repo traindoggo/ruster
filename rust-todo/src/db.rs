@@ -69,7 +69,7 @@ impl DB {
         let mut rows = stmt.query(params![task_id]).unwrap();
 
         let mut cnt: i32 = 0;
-        while let Some(row) = rows.next().unwrap() {
+        while let Some(_) = rows.next().unwrap() {
             cnt += 1
         }
 
