@@ -62,18 +62,12 @@ impl DB {
                                 params![task_id]).unwrap();
     }
 
-    // TODO: better rustacean way
     pub fn exists(&self, task_id: i32) -> bool {
-        let mut stmt = self.connection.prepare(
-            "SELECT id FROM todos WHERE id = ?1").unwrap();
-        let mut rows = stmt.query(params![task_id]).unwrap();
+        let mut stmt = self.connection.prepare("SELECT id FROM todos WHERE id = ?1").unwrap();
 
-        let mut cnt: i32 = 0;
-        while let Some(_) = rows.next().unwrap() {
-            cnt += 1
+        match stmt.exists(params![task_id]) {
+            Ok(_) => true,
+            Err(_) => false,
         }
-
-
-        cnt > 0
     }
 }
