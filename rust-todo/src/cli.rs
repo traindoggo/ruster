@@ -95,8 +95,8 @@ impl CLI {
                 }
 
                 db.edit(task_id, task_name);
-                db.show();
                 println!();
+                db.show();
             }
         }
     }
