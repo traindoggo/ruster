@@ -13,7 +13,7 @@ impl DB {
 
         connection.execute("CREATE TABLE IF NOT EXISTS todos (
             id     INTEGER PRIMARY KEY AUTOINCREMENT,
-            task   STRING  NOT NULL,
+            task   TEXT    NOT NULL,
             status INTEGER NOT NULL
         )", params![]).unwrap();
 
